@@ -32,4 +32,6 @@ public class Controlador
         }
         return (consumoElectricos, consumoCombustible);
     }
+
+ 
 }

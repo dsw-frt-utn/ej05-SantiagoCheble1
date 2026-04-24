@@ -1,10 +1,13 @@
-﻿namespace Dsw2026Ej5.Views;
+﻿using Dsw2026Ej5.Domain;
+
+namespace Dsw2026Ej5.Views;
 
 public class ConsoleView
 {
     private static List<VehiculoViewModel> _vehiculos = Controlador.GetVehiculos();
     public static void DibujarMenu()
     {
+        _vehiculos = Controlador.GetVehiculos();
         string? opcion = null;
         do
         {
@@ -101,6 +104,7 @@ public class ConsoleView
         }
         Console.Write("\n");
         DibujarLinea();
+       
     }
     private static void DibjuarDatos(int columnas)
     {
@@ -131,6 +135,7 @@ public class ConsoleView
             Console.Write("|");
             CentrarTexto(vehiculo.GetKmARecorrer().ToString(), out l, ancho - 1, false);
             Console.Write("".PadRight(ancho - 1 - l));
+            Console.Write("\n");
         }
     }
 }
